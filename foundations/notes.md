@@ -155,3 +155,94 @@ Good examples
     - New authentication middleware to protect routes.
 
 You should commit every time you have a meaningful change in code. Basically, whenever your code functions how you want to. These will be your "snapshots".  
+
+## CSS Foundations
+
+### [Intro to CSS](https://www.theodinproject.com/lessons/foundations-intro-to-css)
+
+Basic Syntax
+
+<!-- Maybe adjust the dimensions -->
+![css-basic-syntax](notes-images/css-basic-syntax.jpg)
+
+#### Selectors
+
+Refer to the HTML elements to which CSS rules apply
+
+Universal Selector
+
+* selects elements of any type
+* an * is used to select all
+
+```css
+* {
+    color: purple;
+}
+```
+
+Type selectors
+
+* selects all elements of the given type
+* syntax is just the name of the element
+
+```html
+<!-- index.html -->
+
+<div>Hello, World!</div>
+<div>Hello again!</div>
+<p>Hi...</p>
+<div>Okay, bye.</div>
+```
+
+```css
+/* styles.css */
+
+div {
+    color: white;
+}
+```
+
+* only the ```<div>``` elements will be affected
+
+Class Selectors
+
+* selects all elements with the given class
+* you can add multiple class to an element using whitespace to separate them
+
+```html
+<!-- index.html -->
+
+<div class="alert-text">Please agree</div>
+```
+
+```css
+/* styles.css */
+.alert-text {
+    color: red;
+}
+```
+
+ID selectors
+
+* similar to class, but use given ID
+* elements can only have **one** ID
+* IDs should be used sparingly
+
+```html
+<!-- index.html -->
+
+<div id="title">My Title</div>
+```
+
+```css
+/* styles.css */
+
+#title {
+    background-color: red;
+}
+```
+
+The grouping selector 
+
+https://www.theodinproject.com/lessons/foundations-intro-to-css#the-grouping-selector 
+TODO Resume progress here
