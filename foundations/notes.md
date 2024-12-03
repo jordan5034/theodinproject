@@ -244,5 +244,220 @@ ID selectors
 
 The grouping selector 
 
-https://www.theodinproject.com/lessons/foundations-intro-to-css#the-grouping-selector 
-TODO Resume progress here
+* used to group elements that share some of the same style declarations
+* cuts down on repetition and makes it easier to edit multiple classes at once
+
+```css
+/* BEFORE */
+
+.read {
+  color: white;
+  background-color: black;
+  /* several unique declarations */
+}
+
+.unread {
+  color: white;
+  background-color: black;
+  /* several unique declarations */
+}
+```
+
+```css
+/* AFTER */
+
+.read,
+.unread {
+    color: white;
+    background-color: black;
+}
+
+.read {
+    /* several unique declarations */
+}
+
+.unread {
+    /* several unique declarations */
+}
+```
+
+Chaining selectors
+
+* chains (connects) together class selectors
+* can chain anything except type selectors (because an element can't be more than one type)
+* can chain different selectors using certain symbols
+
+```html
+<div>
+  <div class="subsection header">Latest Posts</div>
+  <p class="subsection preview">This is where a preview for a post might go.</p>
+</div>
+```
+
+```css
+.subsection.header {
+  color: red;
+}
+
+```
+
+an example of ```chaining a class and an ID```
+
+
+```html
+<div>
+  <div class="subsection header">Latest Posts</div>
+  <p class="subsection" id="preview">
+    This is where a preview for a post might go.
+  </p>
+</div>
+
+```
+
+```css
+.subsection.header {
+  color: red;
+}
+/* notice how a # was used to chain the ID */
+.subsection#preview {
+  color: blue;
+}
+```
+
+Descendant combinator
+
+* combinators allow us to combine multiple selectors differently than group or chaining them
+* relationship based
+* 4 types
+  * descendant combinator (space)
+  * child combinator (>)
+  * next sibling combinator (+)
+  * subsequent-sibling combinator (~)
+* combinator symbol/character goes in between selectors
+  
+```html
+<!-- index.html -->
+
+<div class="ancestor">
+  <!-- A -->
+  <div class="contents">
+    <!-- B -->
+    <div class="contents"><!-- C --></div>
+  </div>
+</div>
+
+<div class="contents"><!-- D --></div>
+```
+
+```css
+/* styles.css */
+/* example of descendant combinator, this will select B and C, but not D */
+
+.ancestor .contents {
+  /* some declarations */
+}
+```
+
+#### Properties to get started with
+
+* there are many properties, but there are some basic ones
+  
+```Color and background-color```  
+
+* **color** : sets an element's text color
+* **background-color** : sets an element's background color
+* both accept keywords such as *red* (colors), *transparent*, *rbg*, *hsl*, and [more](https://www.w3schools.com/cssref/css_colors_legal.php).
+  
+```Typography basics and text-align```
+
+* **font-family** : single or comma-separated list of values determining element font
+  * uses first family name, and moves to the next if not found
+  * ex. *font-family: "Times New Roman", serif;*
+* **font-size** : sets font size (*ex. font-size: 22px*)
+* **font-weight** : sets boldness of text, if supported (*ex. font-weight: 700*)
+* **text-align** : aligns text horizontally within an element (*ex. text-align: center*)
+
+```Image height and width```
+
+* images and other elements can have their height and width adjusted
+* best to include these, even if you aren't changing the dimensions (for rendering purposes)
+
+```css
+img {
+  height: auto;
+  width: 500px;
+}
+```
+
+#### Adding CSS to HTML
+
+External CSS
+
+* most common
+* using separate css file and linking inside of HTML file
+
+```html
+<!-- index.html -->
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+</head>
+```
+
+```css
+/* styles.css */
+
+div {
+  color: white;
+  background-color: black;
+}
+
+p {
+  color: red;
+}
+```
+
+Internal CSS
+
+* adds CSS to the HTML file *directly*
+
+```html
+<head>
+  <style>
+    div {
+      color: white;
+      background-color: black;
+    }
+
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  ...
+</body>
+```
+
+Inline CSS
+
+* adds styles directly to HTML elements
+* should be used rarely
+
+```html
+<body>
+  <div style="color: white; background-color: black;">...</div>
+</body>
+```
+
+#### Assignment
+
+"Go to our [CSS exercises repository](https://github.com/TheOdinProject/css-exercises) and read the README file.
+Then, once you know how to use the exercises, [navigate to the CSS exercises repository’s **foundations/intro-to-css** directory](https://github.com/TheOdinProject/css-exercises/tree/main/foundations/intro-to-css). Review each README file prior to completing the following exercises in order:
+
+01-css-methods
+02-class-id-selectors
+03-group-selectors
+04-chain-selectors
+05-descendant-combinator
+Note: Solutions for these exercises can be found in the solution folder of each exercise."
