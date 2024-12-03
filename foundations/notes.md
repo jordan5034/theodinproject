@@ -455,9 +455,9 @@ Inline CSS
 "Go to our [CSS exercises repository](https://github.com/TheOdinProject/css-exercises) and read the README file.
 Then, once you know how to use the exercises, [navigate to the CSS exercises repository’s **foundations/intro-to-css** directory](https://github.com/TheOdinProject/css-exercises/tree/main/foundations/intro-to-css). Review each README file prior to completing the following exercises in order:
 
-01-css-methods
-02-class-id-selectors
-03-group-selectors
-04-chain-selectors
-05-descendant-combinator
-Note: Solutions for these exercises can be found in the solution folder of each exercise."
+01-css-methods  
+02-class-id-selectors  
+03-group-selectors  
+04-chain-selectors  
+05-descendant-combinator  
+Note: Solutions for these exercises can be found in the solution folder of each exercise."  
